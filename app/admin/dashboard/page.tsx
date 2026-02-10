@@ -54,58 +54,6 @@ export default function AdminDashboard() {
       icon: 'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z'
     }
   ]
-        {/* Admin Site Settings */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-white/80 backdrop-blur-xl rounded-2xl p-8 border border-gray-200/50 shadow-xl mb-8"
-        >
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Website Settings</h2>
-          <div className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700">Title</label>
-              <input
-                type="text"
-                name="title"
-                value={settings.title}
-                onChange={handleSettingsChange}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700">Description</label>
-              <textarea
-                name="description"
-                value={settings.description}
-                onChange={handleSettingsChange}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500"
-                rows={3}
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700">Favicon URL</label>
-              <input
-                type="text"
-                name="favicon"
-                value={settings.favicon}
-                onChange={handleSettingsChange}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500"
-              />
-              <div className="mt-2">
-                <span className="text-xs text-gray-500">Preview:</span>
-                <img src={faviconPreview} alt="Favicon Preview" className="inline-block w-8 h-8 ml-2 border rounded" />
-              </div>
-            </div>
-            <button
-              onClick={handleSave}
-              className="mt-4 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition"
-            >Save Settings</button>
-            {saveMsg && <div className="mt-2 text-green-600 text-sm">{saveMsg}</div>}
-          </div>
-        </motion.div>
-        {/* ...existing dashboard content continues here... */}
-  ]
 
   const quickActions = [
     { name: 'Edit About Section', href: '/admin/dashboard/about', color: 'bg-gradient-to-br from-red-500 to-red-600', icon: 'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z' },
