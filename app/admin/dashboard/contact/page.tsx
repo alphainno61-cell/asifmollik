@@ -296,8 +296,8 @@ export default function AdminContact() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
-                  className="p-6 bg-gray-50/50 rounded-xl border border-gray-200 hover:shadow-md transition-all"
                 >
+                  <div className="p-6 bg-gray-50/50 rounded-xl border border-gray-200 hover:shadow-md transition-all">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center">
@@ -341,6 +341,7 @@ export default function AdminContact() {
                     <h5 className="font-medium text-gray-900 mb-2">{message.subject}</h5>
                     <p className="text-gray-700 leading-relaxed">{message.message}</p>
                   </div>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -358,22 +359,23 @@ export default function AdminContact() {
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.9, opacity: 0, y: 20 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="relative bg-white/90 backdrop-blur-xl rounded-2xl shadow-2xl p-8 max-w-md w-full border border-white/50"
           >
-            <div className="flex flex-col items-center text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mb-4 shadow-lg">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                </svg>
+            <div className="relative bg-white/90 backdrop-blur-xl rounded-2xl shadow-2xl p-8 max-w-md w-full border border-white/50">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mb-4 shadow-lg">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Success!</h3>
+                <p className="text-gray-600 mb-6">Contact information saved successfully!</p>
+                <button
+                  onClick={() => setShowSuccessModal(false)}
+                  className="px-6 py-2.5 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105"
+                >
+                  OK
+                </button>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Success!</h3>
-              <p className="text-gray-600 mb-6">Contact information saved successfully!</p>
-              <button
-                onClick={() => setShowSuccessModal(false)}
-                className="px-6 py-2.5 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105"
-              >
-                OK
-              </button>
             </div>
           </motion.div>
         </div>

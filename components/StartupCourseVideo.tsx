@@ -22,6 +22,13 @@ export default function StartupCourseVideo() {
     return acc
   }, {} as Record<number, string>)
 
+  const handleTabChange = (index: number) => {
+    const video = courseData.videos[index]
+    if (video) {
+      setCurrentTab({ id: video.id, title: video.title })
+    }
+  }
+
   return (
     <section className="flex flex-col items-center py-8 sm:py-12 px-4">
       <h2 className="text-2xl sm:text-3xl font-bold text-center mb-2">{courseData.title}</h2>
@@ -29,7 +36,7 @@ export default function StartupCourseVideo() {
         {courseData.description}
       </p>
       <StartupVideoTabs
-        onTabChange={setCurrentTab}
+        onTabChange={handleTabChange}
         active={currentTab.id}
       />
       <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg border-2 border-red-200 max-w-xl w-full p-4 sm:p-6 flex flex-col items-center">

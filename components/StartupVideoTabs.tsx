@@ -14,8 +14,8 @@ const videoTopics = [
   "How to Exit/IPO"
 ];
 
-export default function StartupVideoTabs({ onTabChange, active }) {
-  const [hovered, setHovered] = useState(null);
+export default function StartupVideoTabs({ onTabChange, active }: { onTabChange: (index: number) => void; active: number }) {
+  const [hovered, setHovered] = useState<number | null>(null);
 
   return (
     <div className="flex flex-col items-center mb-8">
@@ -29,7 +29,7 @@ export default function StartupVideoTabs({ onTabChange, active }) {
             {videoTopics.map((topic, idx) => (
               <div key={idx} className="relative flex flex-col items-center group" style={{ flex: 1 }}>
                 <button
-                  onClick={() => onTabChange({ id: idx + 1, title: topic })}
+                  onClick={() => onTabChange(idx)}
                   onMouseEnter={() => setHovered(idx)}
                   onMouseLeave={() => setHovered(null)}
                   className={`w-7 h-7 rounded-full flex items-center justify-center border-2 text-base font-bold shadow-sm transition-all duration-300 outline-none focus:ring-2 focus:ring-red-300
@@ -70,7 +70,7 @@ export default function StartupVideoTabs({ onTabChange, active }) {
                     {topic}
                   </div>
                   <button
-                    onClick={() => onTabChange({ id: idx + 1, title: topic })}
+                    onClick={() => onTabChange(idx)}
                     onMouseEnter={() => setHovered(idx)}
                     onMouseLeave={() => setHovered(null)}
                     className={`w-7 h-7 rounded-full flex items-center justify-center border-2 text-base font-bold shadow-sm transition-all duration-300 outline-none focus:ring-2 focus:ring-red-300
@@ -93,7 +93,7 @@ export default function StartupVideoTabs({ onTabChange, active }) {
               {videoTopics.slice(5, 10).map((topic, idx) => (
                 <div key={idx + 5} className="relative flex flex-col items-center group" style={{ flex: 1 }}>
                   <button
-                    onClick={() => onTabChange({ id: idx + 6, title: topic })}
+                    onClick={() => onTabChange(idx + 5)}
                     onMouseEnter={() => setHovered(idx + 5)}
                     onMouseLeave={() => setHovered(null)}
                     className={`w-7 h-7 rounded-full flex items-center justify-center border-2 text-base font-bold shadow-sm transition-all duration-300 outline-none focus:ring-2 focus:ring-red-300
