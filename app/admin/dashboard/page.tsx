@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { siteSettings, updateSiteSettings } from '../../data/siteSettings'
+import { siteSettings, updateSiteSettings } from '../../../data/siteSettings'
 import { useState } from 'react'
 
 export default function AdminDashboard() {
